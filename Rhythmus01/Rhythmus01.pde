@@ -5,7 +5,9 @@ longer comment */
 
 color WHITE, BLACK;
 
-//float
+//camel case variables names
+// the fractional amount to change the size of a rectangle each frames
+float xDelta, yDelta;
 
 void setup()
 {
@@ -18,7 +20,7 @@ void setup()
   rectMode(CENTER);
   colorMode(RGB, 1.);
   
-  WHITE = color(255);
+  WHITE = color(1.);
   BLACK = color(0.);
   
  
@@ -26,7 +28,19 @@ void setup()
 
 void draw()
 {
-  background(WHITE);
-  rect(300, 400, 50, 50);
-  fill(BLACK);
+  if (frameCount <= 60)
+  {
+    xDelta = width / 60;
+    background(WHITE);
+    rect(width/2, height/2, xDelta * frameCount, height);
+    fill(BLACK);
+  }
+  else if ( frameCount <= 90)
+  {
+    
+    background(WHITE);
+    xDelta = width / 30;
+    rect(width/2, height/2, xDelta * (frameCount -60.), height);
+     fill(BLACK);
+  }
 }

@@ -32,9 +32,13 @@ void draw()
         sh1 = new Shape(width/2, height/2 , 0, height, width, height, 54, BLACK);
         break;
 
+    case 90:
+      sh1 = new Shape(600,  200, 0, 0, 100, 100, 60, BLACK);
+       break;
+        
     case 107:
-    sh1 = new Shape(400,  300, 0, 50, 200, 200, 100, BLACK);
-        break;
+       sh2 = new Shape(400,  300, 50, 50, 200, 200, 100, BLACK);
+       break;
   }
   
   if(sh1 != null)

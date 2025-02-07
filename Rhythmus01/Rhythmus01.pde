@@ -15,13 +15,18 @@ void setup()
   // 24 frame per second
   frameRate(24);
   
-  WHITE = color(1.);
+  rectMode(CENTER);
+  colorMode(RGB, 1.);
+  
+  WHITE = color(255);
   BLACK = color(0.);
   
-  rectMode(CENTER);
+ 
 }
 
 void draw()
 {
-  
+  background(WHITE);
+  rect(300, 400, 50, 50);
+  fill(BLACK);
 }

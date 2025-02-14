@@ -12,23 +12,26 @@
 // ** STARTING CODE to be developed in lab **
 
 // scale for traversing Perlin space: should be quite tiny
-float scale = .008;
+float scale = .003; //gere le zoom du truc
 
 // colour hue
 float h;
 float t = 0;
-float delta = 0.1;
+float delta = 0.04; //gere la vitesse 
+int sizer = 5;
 
 void setup() {
   size(600, 600);
+  fullScreen();
   colorMode(HSB, 1.);
+  noStroke(); //suprime le quadrillage
 }
 
 void draw(){
   
   // for each point on the canvas...
-  for (int i=0; i<width; i++) {
-    for (int j=0; j<height; j++) {
+  for (int i=0; i<width; i+=sizer) {
+    for (int j=0; j<height; j+=sizer) {
 
       // to be replaced with a Perlin value
       h = noise(t + i*scale, j*scale);
@@ -36,8 +39,8 @@ void draw(){
       //float v = noise(i*scale, j*scale);
       
       // arbitrarily choose saturation and brightness
-      stroke(h, .7, .8);
-      point(i, j);
+      fill(h, .7, .8);
+      rect(i, j, sizer, sizer);
     }
   }
   t += delta;

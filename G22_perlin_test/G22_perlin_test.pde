@@ -34,7 +34,7 @@ void draw(){
     for (int j=0; j<height; j+=sizer) {
 
       // to be replaced with a Perlin value
-      h = noise(t + i*scale, j*scale);
+      h = noise(t + i*scale, t + j*scale);
       
       //float v = noise(i*scale, j*scale);
       

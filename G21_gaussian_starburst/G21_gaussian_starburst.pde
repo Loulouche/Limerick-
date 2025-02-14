@@ -14,6 +14,8 @@
 // colour constants 
 color WHITE, BLACK;
 
+float limit;
+
 void setup() {
     fullScreen();
 
@@ -24,12 +26,21 @@ void setup() {
     stroke(BLACK);
     strokeWeight(2);
 
+    limit = height * 0.4;
+
     starburst();
 }
 
 void starburst() {
     background(WHITE);
-
+    
+    translate(width/2, height/2);
+    for ( int i =0; i < 360; i++)
+    {
+      int d = constrain(abs(int(randomGaussian() * limit)), 0, (int)limit);
+      rotate(TWO_PI  /360.);
+      line(0, 0, d, 0);
+    }
 }
 
 void draw() {}

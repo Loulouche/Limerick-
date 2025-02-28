@@ -21,18 +21,18 @@ void setup()
   b = 4;
   
   background(WHITE);
-  polarRose(a, b , RED);
+  polarRose(300, 4 , RED);
   noLoop();
   
 }
 
-void draw()
-{
-  background(WHITE);
+//void draw()
+//{
+  //background(WHITE);
   
   // choose parameters to try differents shapes
-  polarRose(300, 4 , RED);
-}
+ // polarRose(300, 4 , RED);
+//}
 
 void polarRose(float a, float b, color c)
 {

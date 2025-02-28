@@ -31,7 +31,8 @@ void draw()
 {
   background(WHITE);
   
-   a = int( map(mouseX, 0, width, 0, 300) );
+   a = int( map(mouseX, 0, width, 0, 300) ); //si on met (int(height*4)) a la place de 300
+   //ca fait une grosse fleur
    b = int( map(mouseY, 0, height, 0, 30) );
   
   

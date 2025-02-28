@@ -31,7 +31,7 @@ void draw()
 {
   background(WHITE);
   
-   a = int( map(mouseX, 0, width, 0, int(height * 4)) );
+   a = int( map(mouseX, 0, width, 0, 300) );
    b = int( map(mouseY, 0, height, 0, 30) );
   
   

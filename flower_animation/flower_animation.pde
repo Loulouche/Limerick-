@@ -13,20 +13,33 @@ void setup()
   fullScreen(FX2D);
   colorMode(HSB, 1.);
   
-  int WHITE = 1;
-  int RED = color(0, 1., 1.);
+  WHITE = 1;
+  RED = color(0, 1., 1.);
   
-  a = int(height * 4.);
-  b = 4;
+  //a = int(height * 4.);
+  //b = 4;
   
-  background(WHITE);
-  polarRose(500, 18 , RED); //si on modifie les coordonee 300 et 4 il y a un zoom.
+  //background(WHITE);
+  //polarRose(500, 18 , RED); //si on modifie les coordonee 300 et 4 il y a un zoom.
   // plus x > 300 plus la fleur est grosse  plusy > 4 plus il y a de petales
   
-  noLoop();
+  //noLoop();
   
 }
 
+void draw() 
+{
+  background(WHITE);
+  
+   a = int( map(mouseX, 0, width, 0, int(height * 4)) );
+   b = int( map(mouseY, 0, height, 0, 30) );
+  
+  
+  text("radius: " + a, 20, 20);
+  text("petals: " + b, 20, 40);
+  
+  polarRose(a, b, RED);
+}
 
 void polarRose(float a, float b, color c)
 {
